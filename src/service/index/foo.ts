@@ -8,7 +8,7 @@ export interface IFooItem {
 }
 
 export const getFooList = () => apiClient.Get<IFooItem>('/foo')
-export const getSingleFoo = (name: string) => apiClient.Post<IFooItem>(`/foo`,{name})
+export const getSingleFoo = (name: string) => apiClient.Post<IFooItem>(`/foo`, { name })
 
 export const uploadDocument = (file: File, description: string) => {
   return createValidatedUploadMethod(

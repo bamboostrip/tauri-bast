@@ -66,7 +66,7 @@ const {
   error: fooItemError,
   send: runGetFooItemById, // 这个 send 函数现在需要参数
 } = useRequest(
-  //这个函数会在调用 runGetFooItemById(id) 时执行，并接收 id 参数
+  // 这个函数会在调用 runGetFooItemById(id) 时执行，并接收 id 参数
   (name: string) => getSingleFoo(name),
   {
     immediate: false, // 不自动执行，等待手动调用 runGetFooItemById
@@ -78,7 +78,7 @@ const handleFetchItemById = async () => {
     ElMessage.error('请输入 name')
     return
   }
-  //调用 runGetFooItemById 时传入参数，这个参数会传给 useRequest 的第一个参数 (函数)
+  // 调用 runGetFooItemById 时传入参数，这个参数会传给 useRequest 的第一个参数 (函数)
   // runGetFooItemById(itemId.value); // 这样也可以
   // 如果你想在调用后做些事情，可以 await 它
   const result = await runGetFooItemById(itemName.value)
