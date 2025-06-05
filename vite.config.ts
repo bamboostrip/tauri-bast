@@ -6,7 +6,7 @@ import dayjs from 'dayjs'
 // Vite 插件
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+
 import ViteRestart from 'vite-plugin-restart'
 import { visualizer } from 'rollup-plugin-visualizer'
 import Pages from 'vite-plugin-pages' // 用于自动生成路由
@@ -56,7 +56,7 @@ export default defineConfig(async ({ command, mode }): Promise<UserConfig> => {
         'vue',
         'vue-router',
       ],
-      resolvers: [ElementPlusResolver()],
+      resolvers: [],
       dts: 'src/types/auto-imports.d.ts',
       eslintrc: {
         enabled: true,
@@ -65,7 +65,7 @@ export default defineConfig(async ({ command, mode }): Promise<UserConfig> => {
       },
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [],
       dts: 'src/types/components.d.ts',
     }),
     ViteRestart({
