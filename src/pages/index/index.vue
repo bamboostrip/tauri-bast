@@ -34,15 +34,6 @@ import { ref } from 'vue'
 import { useRequest } from 'alova/client'
 import { getFooList, getSingleFoo } from '@/service/index/foo' // 2. 导入你的 API Method
 import { ElMessage } from 'element-plus'
-// import { definePage } from 'unplugin-vue-router/runtime'
-
-definePage({
-  meta: {
-    layout: 'default-layout',
-    title: '另一个演示页', // 用这个 title 来设置 document.title
-    requiresAuth: false, // 是否需要登录
-  },
-})
 
 // --- 示例1: 获取列表，组件挂载时自动执行 ---
 const {
