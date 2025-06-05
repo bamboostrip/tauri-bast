@@ -2,6 +2,7 @@ import { defineConfig, loadEnv, type UserConfig, type PluginOption } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'node:path' // 导入 path 模块，需要 @types/node
 import dayjs from 'dayjs'
+import tailwindcss from '@tailwindcss/vite'
 
 // Vite 插件
 import AutoImport from 'unplugin-auto-import/vite'
@@ -51,11 +52,9 @@ export default defineConfig(async ({ command, mode }): Promise<UserConfig> => {
       defaultLayout: 'default', // 默认布局的文件名 (默认就是 'default')
       // ... 其他 vite-plugin-vue-layouts-next 配置 (如有需要，参考其文档)
     }),
+    tailwindcss(),
     AutoImport({
-      imports: [
-        'vue',
-        'vue-router',
-      ],
+      imports: ['vue', 'vue-router'],
       resolvers: [],
       dts: 'src/types/auto-imports.d.ts',
       eslintrc: {

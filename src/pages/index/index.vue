@@ -1,3 +1,12 @@
+<route lang="json5">
+{
+  name: 'home',
+  meta: {
+    requiresAuth: true,
+  },
+}
+</route>
+
 <template>
   <div>
     <h2>常规数据列表 (自动加载)</h2>
@@ -33,6 +42,7 @@
 import { ref } from 'vue'
 import { useRequest } from 'alova/client'
 import { getFooList, getSingleFoo } from '@/service/index/foo' // 2. 导入你的 API Method
+import { toast } from 'vue-sonner'
 
 // --- 示例1: 获取列表，组件挂载时自动执行 ---
 const {
@@ -65,7 +75,7 @@ const {
 
 const handleFetchItemById = async () => {
   if (!itemName.value) {
-    alert('请输入 name')
+    toast.error('请输入 name')
     return
   }
   // 调用 runGetFooItemById 时传入参数，这个参数会传给 useRequest 的第一个参数 (函数)

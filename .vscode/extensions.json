@@ -5,6 +5,8 @@
     "rust-lang.rust-analyzer",
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
-    "stylelint.vscode-stylelint"
+    "stylelint.vscode-stylelint",
+    "bradlc.vscode-tailwindcss",
+    "mrmlnc.vscode-json5"
   ]
 }

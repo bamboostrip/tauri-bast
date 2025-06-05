@@ -1,10 +1,11 @@
 // src/router/index.ts
 import type { Router } from 'vue-router'
+import { useUserStore } from '@/store/user'
 
-// 模拟一个获取用户登录状态的函数
+// 获取用户登录状态的函数
 const isLoggedIn = (): boolean => {
-  // 在这里实现你的登录状态检查逻辑，例如从 localStorage, Vuex/Pinia store 读取
-  return !!localStorage.getItem('user-token')
+  const userStore = useUserStore()
+  return userStore.isLogined
 }
 
 export function setupRouterGuards(router: Router) {
@@ -31,5 +32,7 @@ export function setupRouterGuards(router: Router) {
   router.afterEach((to, from) => {
     // 可以在这里添加一些路由切换后的逻辑，比如页面标题设置、分析等
     // console.log(`Mapsd to ${to.path}`);
+    // 打印所有路由信息
+    console.log('All routes:', router.getRoutes())
   })
 }

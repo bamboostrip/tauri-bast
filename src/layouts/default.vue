@@ -1,7 +1,14 @@
 <template>
-  <div>
-    <h1>布局头部固定文字</h1>
-    <RouterView />
-    <p>布局尾部固定文字</p>
-  </div>
+  <SidebarProvider>
+    <AppSidebar />
+    <main>
+      <SidebarTrigger />
+      <RouterView />
+    </main>
+  </SidebarProvider>
 </template>
+
+<script lang="ts" setup>
+import AppSidebar from '@/components/AppSidebar.vue'
+import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
+</script>
